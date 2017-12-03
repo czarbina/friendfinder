@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Friend Finder</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/assets/style.css">
+
+</head>
+<body>
+<div class="container">
+    
+<div class="form-group">
+    <label for="nameInput">Name (Required)</label>
+    <input type="text" class="form-control" id="name" placeholder="Name">
+</div>
+    
+<div class="form-group">
+    <label for="photoInput">Link to Photo (optional)</label>
+    <input type="text" class="form-control" id="photo" placeholder="Photo">
+</div>
+    
+<form>
+    <div id="form-questions">
+
+    <h3>Q U E S T I O N // o n e</h3>
+    <label for="q1">You are a strong, independent, black woman.</label>
+        <br>
+        <select class="chosen-select" id="question1">
+            <option></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>  <br>
+
+    <h3>Q U E S T I O N // t w o</h3>
+    <label for="q2">You are a strong, independent, black woman.</label>
+    <br>
+        <select class="chosen-select" id="question2">
+            <option></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>  <br>
+
+    <h3>Q U E S T I O N // t h r e e</h3>
+    <label for="q3">You are a strong, independent, black woman.</label>
+    <br>
+        <select class="chosen-select" id="question3">
+            <option></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>  <br>
+        
+    <h3>Q U E S T I O N // f o u r</h3>
+    <label for="q4">You are a strong, independent, black woman.</label>
+    <br>
+        <select class="chosen-select" id="question4">
+            <option></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>  <br>
+        
+    <h3>Q U E S T I O N // f i v e</h3>
+    <label for="q5">You are a strong, independent, black woman.</label>
+    <br>
+       <select class="chosen-select" id="question5">
+            <option></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>  <br>
+
+    <h3>Q U E S T I O N // s i x</h3>
+    <label for="q6">You are a strong, independent, black woman.</label>
+    <br>
+        <select class="chosen-select" id="question6">
+            <option></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>  <br>
+
+
+    <h3>Q U E S T I O N // s e v e n</h3>
+    <label for="q7">You are a strong, independent, black woman.</label>
+    <br>
+        <select class="chosen-select" id="question7">
+            <option></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>  <br>
+
+    <h3>Q U E S T I O N // e i g h t</h3>
+    <label for="q8">You are a strong, independent, black woman.</label>
+    <br>
+         <select class="chosen-select" id="question8">
+            <option></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>  <br>
+        
+
+    <h3>Q U E S T I O N // nine</h3>
+    <label for="q9">You are a strong, independent, black woman.</label>
+    <br>
+        <select class="chosen-select" id="question9">
+            <option></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>  <br>
+
+    <h3>Q U E S T I O N // t e n </h3>
+    <label for="q10">You are a strong, independent, black woman.</label>
+    <br>
+        <select class="chosen-select" id="question10">
+            <option></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>    
+    </div>
+</form>    
+
+<div>
+    <button type="submit" id="submit" class="btn btn-default">Submit
+    </button>
+</div>
+
+<div id="resultsModal" class="modal fade" role ="dialog">
+    <div class="modal-dialog">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">Exit</button>
+            <h2 class="modal-title">
+                <strong>Best Match</strong>
+            </h2>
+        </div>
+
+        <div class="modal-body">
+            <h2 id="matchName"></h2>
+            <img id="matchImg" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div> 
+</div>
+
+
+
+<script type="text/javascript">
+
+    $("#submit").on("click", function(event) {
+        event.preventDefault();
+ 
+    function validateForm() {
+        var isValid = true;
+        $(".form-control").each(function(){
+            if ($(this).val()==="")
+                isValid = false;
+        });
+
+        $(".chosen-select").each(function() {
+            if($(this).val()==="")
+                isValid = false
+        })
+        return isValid;
+    }  
+
+    if (validateForm() == true) {
+        var newFriend = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            scores: [$("#question1").val(), $("#question2").val(), $("#question3").val(), $("#question4").val(), $("#question5").val(), $("#question6").val(), $("#question7").val(), $("#question8").val(), $("#question9").val(), $("#question10").val() ]
+        }
+
+        var currentURL = window.location.origin;
+
+        $.post(currentURL + "/api/friends", newFriend, function(data) {
+            $("#matchName").text(data.name);
+            $("#matchImg")attr("src",data.photo);
+            $("#resultsModal").modal("toggle");
+        });
+    } 
+    else {
+        alert("Please fill form");
+    }
+    return false;
+   
+});
+
+</script>
+</body>
+</html>
