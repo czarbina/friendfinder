@@ -4,3 +4,16 @@ body { background-color: orange;
  .jumbotron {
  	margin-top: 20px;
  }
+
+h4 {
+	font-size: 23px;
+	font-weight: bolder;
+}
+
+label {
+	font-size: 18px;
+}
+
+.btn-block {
+	margin-top: 20px;
+}
