@@ -149,33 +149,33 @@
 </form>    
 
 <div>
-    <button type="submit" id="submit" class="btn btn-default">Submit
+    <button type="button" id="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Submit
     </button>
 </div>
 
-<!-- <div id="resultsModal" class="modal fade" role ="dialog">
-    <div class="modal-dialog">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">Exit</button>
-            <h2 class="modal-title">
-                <strong>Best Match</strong>
-            </h2>
-        </div>
-
-        <div class="modal-body">
-            <h2 id="matchName"></h2>
-            <img id="matchImg" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
-</div>  -->
+  </div>
+</div>
 </div>
 
 
 
 <script type="text/javascript">
+
 
     $("#submit").on("click", function(event) {
         event.preventDefault();
@@ -212,6 +212,19 @@
                 else {
                     console.log("newFriend not added");
                 }
+
+                $("#name").val("");
+                $("#photo").val("");
+                $("#question1").val(""); 
+                $("#question2").val(""); 
+                $("#question3").val(""); 
+                $("#question4").val(""); 
+                $("#question5").val(""); 
+                $("#question6").val(""); 
+                $("#question7").val(""); 
+                $("#question8").val(""); 
+                $("#question9").val(""); 
+                $("#question10").val(""); 
             })
 
         // var currentURL = window.location.origin;
@@ -226,7 +239,11 @@
     } 
 
     else {
-        alert("Please fill form");
+        console.log("Please fill form");
+        $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').focus()
+})
+
     }
     return false;
    

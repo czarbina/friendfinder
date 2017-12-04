@@ -6,6 +6,7 @@ var friendsData = require("../data/friends");
 // ROUTING
 // ===============================================================================
 
+
 module.exports = function(app) {
 // API GET Requests for friends JSON. We designate /api/friends to be an
 // endpoint that will deliver our friendsArray JSON when visited.
