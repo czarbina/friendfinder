@@ -16,4 +16,9 @@ label {
 
 .btn-block {
 	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+footer {
+	margin-bottom: 20px;
 }

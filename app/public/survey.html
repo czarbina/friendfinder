@@ -3,6 +3,7 @@
 <head>
   <title>Friend Finder</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="../../assets/style.css">
@@ -28,7 +29,7 @@
     <div id="form-questions">
 
     <h4>Q U E S T I O N // o n e</h4>
-    <label for="q1">You are a strong, independent, black woman.</label>
+    <label for="q1">You are 138.</label>
         <br>
         <select class="chosen-select" id="question1">
             <option>Select one</option>
@@ -40,7 +41,7 @@
         </select>  <br><br>
 
     <h4>Q U E S T I O N // t w o</h4>
-    <label for="q2">You are a strong, independent, black woman.</label>
+    <label for="q2">You are beautiful, no matter what they say. Words can't bring you down.</label>
     <br>
         <select class="chosen-select" id="question2">
             <option>Select one</option>
@@ -52,7 +53,7 @@
         </select>  <br><br>
 
     <h4>Q U E S T I O N // t h r e e</h4>
-    <label for="q3">You are a strong, independent, black woman.</label>
+    <label for="q3">You know nothing, Jon Snow.</label>
     <br>
         <select class="chosen-select" id="question3">
             <option>Select one</option>
@@ -64,7 +65,7 @@
         </select>  <br><br>
         
     <h4>Q U E S T I O N // f o u r</h4>
-    <label for="q4">You are a strong, independent, black woman.</label>
+    <label for="q4">Your body is a wonderland.</label>
     <br>
         <select class="chosen-select" id="question4">
             <option>Select one</option>
@@ -76,7 +77,7 @@
         </select>  <br><br>
         
     <h4>Q U E S T I O N // f i v e</h4>
-    <label for="q5">You are a strong, independent, black woman.</label>
+    <label for="q5">You see a red door and you want to paint it black.</label>
     <br>
        <select class="chosen-select" id="question5">
             <option>Select one</option>
@@ -88,7 +89,7 @@
         </select>  <br><br>
 
     <h4>Q U E S T I O N // s i x</h4>
-    <label for="q6">You are a strong, independent, black woman.</label>
+    <label for="q6">You will survive. As long as you know how to love you know you'll be alive.</label>
     <br>
         <select class="chosen-select" id="question6">
             <option>Select one</option>
@@ -101,7 +102,7 @@
 
 
     <h4>Q U E S T I O N // s e v e n</h4>
-    <label for="q7">You are a strong, independent, black woman.</label>
+    <label for="q7">Your heart will go on.</label>
     <br>
         <select class="chosen-select" id="question7">
             <option>Select one</option>
@@ -113,7 +114,7 @@
         </select>  <br><br>
 
     <h4>Q U E S T I O N // e i g h t</h4>
-    <label for="q8">You are a strong, independent, black woman.</label>
+    <label for="q8">You're into, uh, well, murders and executions, mostly.</label>
     <br>
          <select class="chosen-select" id="question8">
             <option>Select one</option>
@@ -126,7 +127,7 @@
         
 
     <h4>Q U E S T I O N // nine</h4>
-    <label for="q9">You are a strong, independent, black woman.</label>
+    <label for="q9">You are a knight who says "Ni".</label>
     <br>
         <select class="chosen-select" id="question9">
             <option>Select one</option>
@@ -138,7 +139,7 @@
         </select>  <br><br>
 
     <h4>Q U E S T I O N // t e n </h4>
-    <label for="q10">You are a strong, independent, black woman.</label>
+    <label for="q10">You are so serious.</label>
     <br>
         <select class="chosen-select" id="question10">
             <option>Select one</option>
@@ -155,23 +156,32 @@
     <button type="button" id="submit" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">Submit
     </button>
 </div>
+<hr>
+<footer>
+    <a href="/api/friends">API Friends List</a> | <a href="https://github.com/czarbina/friendfinder">Github Repo</a>
+</footer>
 
+<!-- Mocal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
+<div class="modal-dialog">    
+
+<!-- Modal content -->
+<div class="modal-content">
+    <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
+    </div>
+      
+    <div class="modal-body">
+        Bodybodybody
+    </div>
+
+    <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
     </div>
-  </div>
+</div>
+</div>
 </div>
 </div>
 
@@ -182,6 +192,7 @@
 
     $("#submit").on("click", function(event) {
         event.preventDefault();
+
  
     function validateForm() {
         var isValid = true;
@@ -237,15 +248,14 @@
         //     $("#matchImg")attr("src",data.photo);
         //     $("#resultsModal").modal("toggle");
         // });
-        alert("Everything filled out");
+        console.log("Everything filled out");
         console.log(newFriend);
+        
+        $('#myModal').modal("toggle");
     } 
 
     else {
-        console.log("Please fill form");
-        $('#myModal').on('shown.bs.modal', function () {
-        $('#myInput').focus()
-})
+        alert("Please fill out the entire form before submitting.");
 
     }
     return false;
