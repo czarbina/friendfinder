@@ -169,16 +169,14 @@
 <div class="modal-content">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Your best match...</h4>
     </div>
       
     <div class="modal-body">
-        Bodybodybody
     </div>
 
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
     </div>
 </div>
 </div>
@@ -240,18 +238,8 @@
                 $("#question9").val(""); 
                 $("#question10").val(""); 
             })
+    $("#myModal").modal("toggle");
 
-        // var currentURL = window.location.origin;
-
-        // $.post(currentURL + "/api/friends", newFriend, function(data) {
-        //     $("#matchName").text(data.name);
-        //     $("#matchImg")attr("src",data.photo);
-        //     $("#resultsModal").modal("toggle");
-        // });
-        console.log("Everything filled out");
-        console.log(newFriend);
-        
-        $('#myModal').modal("toggle");
     } 
 
     else {

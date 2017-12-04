@@ -32,4 +32,8 @@ module.exports = function(app) {
       console.log(friendsArray);
     
   });
+
+  app.post("/survey", function(req, res) {
+    console.log("You end my endpoint");
+  })
 };
