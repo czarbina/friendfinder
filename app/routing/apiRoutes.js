@@ -46,18 +46,24 @@ module.exports = function(app) {
     var friendScoreArray = [];  
 
     for (i=0; i < friendsData.length; i++) {
-      if(req.body.scores.reduce(sum)===friendsData[i].scores.reduce(sum)) {
+      if(req.body.scores.reduce(sum) - friendsData[i].scores.reduce(sum) === 0) {
 
-        console.log("You have a match: " + friendsData[i].name);
-        console.log(friendsData[i].name);
+        console.log("You have a PERFECT match: " + friendsData[i].name);
+        // console.log(friendsData[i].name);
         res.json(friendsData[i]);
 
 
         // console.log("Friend: " + friendsData[i].name +
         //   "|| Score: " + friendsData[i].scores.reduce(sum));
         // friendScoreArray.push(friendsData[i].scores.reduce(sum));
-
       }
+
+      else if (req.body.scores.reduce(sum) - friendsData[i].scores.reduce(sum) === 1 ||
+        req.body.scores.reduce(sum) - friendsData[i].scores.reduce(sum) === -1) {
+        console.log("You have an IMPERFECT match: " + friendsData[i].name);
+        res.json(friendsData[i]);
+      }
+
     }  
       // for(j=0; j<friendScoreArray.length;j++) {
       //   if (myTotal === friendScoreArray[j]) {
