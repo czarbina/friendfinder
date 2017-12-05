@@ -161,7 +161,7 @@
     <a href="/api/friends">API Friends List</a> | <a href="https://github.com/czarbina/friendfinder">Github Repo</a>
 </footer>
 
-<!-- Mocal -->
+<!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 <div class="modal-dialog">    
 
@@ -172,8 +172,9 @@
         <h4 class="modal-title" id="myModalLabel">Your best match...</h4>
     </div>
       
-    <div class="modal-body">
+    <div class="modal-body" id="friendName">
     </div>
+    <img src="" class="modal-body" id="friendPhoto">
 
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
@@ -187,18 +188,22 @@
 
 <script type="text/javascript">
 
-
+// Click event function that houses requests
     $("#submit").on("click", function(event) {
         event.preventDefault();
 
- 
+// Ensures all form fields are filled out and will be basis of conditional
+// below.
     function validateForm() {
         var isValid = true;
+
+    // Checks the text input boxes 
         $(".form-control").each(function(){
             if ($(this).val()==="")
                 isValid = false;
         });
 
+    // Checks the dropdown menus
         $(".chosen-select").each(function() {
             if($(this).val()==="")
                 isValid = false
@@ -213,12 +218,16 @@
             scores: [$("#question1").val(), $("#question2").val(), $("#question3").val(), $("#question4").val(), $("#question5").val(), $("#question6").val(), $("#question7").val(), $("#question8").val(), $("#question9").val(), $("#question10").val() ]
         };
 
-        console.log(newFriend);
 
-        $.post("/api/friends", newFriend,
-            function(data) {
+
+        console.log(newFriend.scores);
+
+        $.post("/api/friends", newFriend, function(data) {
                 if(data) {
-                    console.log("newFriend added");
+                    $("#myModal").modal("toggle");
+                    $("#friendName").text(data.name);
+                    $("#friendPhoto").attr("src", data.photo);
+                    console.log(data);
                 }
 
                 else {
@@ -238,7 +247,9 @@
                 $("#question9").val(""); 
                 $("#question10").val(""); 
             })
-    $("#myModal").modal("toggle");
+
+
+   
 
     } 
 

@@ -28,12 +28,30 @@ module.exports = function(app) {
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body-parser middleware
       friendsData.push(req.body);
-      res.json(true);
-      console.log(friendsArray);
-    
-  });
+      var scores = req.body.scores;
+      console.log(scores);
 
-  app.post("/survey", function(req, res) {
-    console.log("You end my endpoint");
-  })
+      var mySum = function(total, num) {
+        return parseInt(total) + parseInt(num); 
+      }
+
+      var myScore = scores.reduce(mySum);
+      console.log(myScore);
+
+      res.json(friendsData[0]);
+      // console.log(friendsData);
+});
+      // for(i=0; i<friendsData.length;i++){
+
+
+      // }
+      // res.json(match);
+      
+
+
+
+    
+  
+
+
 };
