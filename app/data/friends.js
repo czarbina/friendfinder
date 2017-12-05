@@ -1,7 +1,7 @@
 var friendsArray = [
 	{
   "name":"Chopino",
-  "photo":"https://upload.wikimedia.org/wikipedia/commons/c/c8/ChaCha_Red_Logo.jpg",
+  "photo":"https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/14976476_10102087066513888_825314293724131017_o.jpg?oh=17882174f63e2477154fe3fbd873b885&oe=5A8ECE7C",
   "scores":[
       5,
       1,
@@ -36,7 +36,7 @@ var friendsArray = [
 
 	{
   "name":"Kevin",
-  "photo":"NO",
+  "photo":"https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/20915286_10102555410513758_1219497348141515435_n.jpg?oh=11b099f65691eebf734a484c890c61d6&oe=5AD277F2",
   "scores":[
       1,
       1,
@@ -54,7 +54,7 @@ var friendsArray = [
 
 	{
   "name":"Sabrina",
-  "photo":"Nope",
+  "photo":"https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/12898365_10101807559278628_8945736014476464529_o.jpg?oh=816ced675c2cddbeddfa34cad53581b1&oe=5AC610DE",
   "scores":[
       5,
       5,
