@@ -184,81 +184,74 @@
 </div>
 </div>
 
-
-
 <script type="text/javascript">
 
 // Click event function that houses requests
-    $("#submit").on("click", function(event) {
-        event.preventDefault();
+$("#submit").on("click", function(event) {
+    event.preventDefault();
 
 // Ensures all form fields are filled out and will be basis of conditional
 // below.
-    function validateForm() {
-        var isValid = true;
+function validateForm() {
+    var isValid = true;
 
     // Checks the text input boxes 
-        $(".form-control").each(function(){
-            if ($(this).val()==="")
+    $(".form-control").each(function(){
+        if ($(this).val()==="") {
                 isValid = false;
-        });
+        }        
+    });
 
     // Checks the dropdown menus
-        $(".chosen-select").each(function() {
-            if($(this).val()==="")
-                isValid = false
-        })
-        return isValid;
-    }  
+    $(".chosen-select").each(function() {
+        if($(this).val()==="") {
+            isValid = false
+        }        
+    })
+    return isValid;
+}  
 
-    if (validateForm() == true) {
-        var newFriend = {
-            name: $("#name").val().trim(),
-            photo: $("#photo").val().trim(),
-            scores: [$("#question1").val(), $("#question2").val(), $("#question3").val(), $("#question4").val(), $("#question5").val(), $("#question6").val(), $("#question7").val(), $("#question8").val(), $("#question9").val(), $("#question10").val() ]
-        };
+if (validateForm() == true) {
+    var newFriend = {
+        name: $("#name").val().trim(),
+        photo: $("#photo").val().trim(),
+        scores: [$("#question1").val(), $("#question2").val(), $("#question3").val(), $("#question4").val(), $("#question5").val(), $("#question6").val(), $("#question7").val(), $("#question8").val(), $("#question9").val(), $("#question10").val() ]
+    };
 
+console.log(newFriend.scores);
 
+    $.post("/api/friends", newFriend, function(data) {
+        if(data) {
+            $("#myModal").modal("toggle");
+            $("#friendName").text(data.name);
+            $("#friendPhoto").attr("src", data.photo);
+            console.log(data);
+        }
 
-        console.log(newFriend.scores);
+        else {
+            console.log("newFriend not added");
+        }
 
-        $.post("/api/friends", newFriend, function(data) {
-                if(data) {
-                    $("#myModal").modal("toggle");
-                    $("#friendName").text(data.name);
-                    $("#friendPhoto").attr("src", data.photo);
-                    console.log(data);
-                }
-
-                else {
-                    console.log("newFriend not added");
-                }
-
-                $("#name").val("");
-                $("#photo").val("");
-                $("#question1").val(""); 
-                $("#question2").val(""); 
-                $("#question3").val(""); 
-                $("#question4").val(""); 
-                $("#question5").val(""); 
-                $("#question6").val(""); 
-                $("#question7").val(""); 
-                $("#question8").val(""); 
-                $("#question9").val(""); 
-                $("#question10").val(""); 
-            })
-
-
-   
-
-    } 
+        $("#name").val("");
+        $("#photo").val("");
+        $("#question1").val(""); 
+        $("#question2").val(""); 
+        $("#question3").val(""); 
+        $("#question4").val(""); 
+        $("#question5").val(""); 
+        $("#question6").val(""); 
+        $("#question7").val(""); 
+        $("#question8").val(""); 
+        $("#question9").val(""); 
+        $("#question10").val(""); 
+    })
+} 
 
     else {
         alert("Please fill out the entire form before submitting.");
-
     }
+
     return false;
-   
 });
 
 </script>
