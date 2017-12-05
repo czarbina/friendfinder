@@ -15,46 +15,61 @@ module.exports = function(app) {
     res.json(friendsData);
   });
 
-  // API POST Requests
+  // API POST Request
   // Below code handles when a user submits the survey.
-  // In each of the below cases, when a user submits form data (a JSON object)
-  // ...the JSON is pushed to the appropriate JavaScript array
-  // (ex. User fills out a reservation request... this data is then sent to the server...
-  // Then the server saves the data to the tableData array)
-  // ---------------------------------------------------------------------------
+  // ========================================================
 
   app.post("/api/friends", function(req, res) {
-    // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
-    // It will do this by sending out the value "true" have a table
-    // req.body is available since we're using the body-parser middleware
-      friendsData.push(req.body);
 
-      var myScores = req.body.scores;
-      // console.log(myScores);
+  // Take POST request info and push it to friendsData array.
+  // ========================================================
+    friendsData.push(req.body);
 
-      var mySum = function(total, num) {
-        return parseInt(total) + parseInt(num); 
-      }
+  // Below code takes sum of req.body score
+  // ========================================================
+    // var myScores = req.body.scores;
+  // console.log(myScores);
 
-      var myTotal = myScores.reduce(mySum);
-      console.log(myTotal);
+    var sum = function(total, num) {
+      return parseInt(total) + parseInt(num); 
+    }
+
+  // score of user lives in myTotal 
+    // var myTotal = myScores.reduce(sum);
+    // console.log(myTotal);
+    console.log(req.body.scores.reduce(sum));
 
       
+  // Loops through friend list to retrieve scores of friends
+  // friendTotal houses every score
+ 
+    var friendScoreArray = [];  
 
-      for (i=0; i < friendsData.length; i++) {
+    for (i=0; i < friendsData.length; i++) {
+      if(req.body.scores.reduce(sum)===friendsData[i].scores.reduce(sum)) {
 
-          var friendSum = function(total, num) {
-          return parseInt(total) + parseInt(num); 
-          }
+        console.log("You have a match: " + friendsData[i].name);
+        console.log(friendsData[i].name);
+        res.json(friendsData[i]);
 
-        var friendTotal = friendsData[i].scores.reduce(friendSum);
 
-        // console.log(friendsData[i].scores);
-        console.log("Friend: " + friendsData[i].name +
-          "|| Score: " + friendTotal);
+        // console.log("Friend: " + friendsData[i].name +
+        //   "|| Score: " + friendsData[i].scores.reduce(sum));
+        // friendScoreArray.push(friendsData[i].scores.reduce(sum));
+
       }
+    }  
+      // for(j=0; j<friendScoreArray.length;j++) {
+      //   if (myTotal === friendScoreArray[j]) {
+      //     console.log("We have a match");
+      //   }
+      //   else {
+      //     console.log("No match");
+      //   }
+      // }
 
-      res.json(friendsData[0]);
+      // res.json(friendsData[0]);
+      // console.log(friendScoreArray)
       // console.log(friendsData);
 
   });
